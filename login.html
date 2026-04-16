@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Hotel Paradise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Hotel Paradise</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li id="auth-nav" style="display: none;">
+            <span>Welcome, <span id="username-display"></span> | <a href="#" onclick="logout()">Logout</a></span>
+          </li>
+          <li id="login-link"><a href="login.html">Login</a></li>
+          <li id="register-link"><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-section" style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center; padding: 20px;">
+    <div class="container">
+      <div style="max-width: 400px; width: 100%; margin: 0 auto;">
+        <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: #2c3e50;">Login to your account</h2>
+        <form id="loginForm" class="professional-form">
+          <label for="loginUsername">Username or Email</label>
+          <input type="text" id="loginUsername" required>
+          <span class="error"></span>
+
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required>
+          <span class="error"></span>
+
+          <button type="submit" class="btn">Login</button>
+          <p style="text-align: center; margin-top: 20px;">
+            Don't have an account? <a href="register.html">Register here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer style="position: relative; margin-top: auto;">
+    <p>&copy; 2025 Hotel Paradise. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Temp for login page load
+    updateNav();
+    
+    // Real-time validation for login
+    document.getElementById('loginPassword').addEventListener('input', function() {
+      if (this.value) {
+        clearFieldError('loginPassword');
+      }
+    });
+    
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const credential = document.getElementById('loginUsername').value;
+      const password = document.getElementById('loginPassword').value;
+      
+      const result = validateLogin(credential, password);
+      if (!result.valid) {
+        showFieldError('loginUsername', result.error);
+        return;
+      }
+      
+      login(result.user);
+      alert('Login successful!');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

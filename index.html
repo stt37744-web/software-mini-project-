@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Paradise - Luxury Accommodations & Perfect Getaways</title>
+  <meta name="description" content="Discover Hotel Paradise - luxury rooms, fine dining, spa, and exceptional service. Book your perfect stay today!">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Loading Spinner -->
+  <div class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <header>
+    <div class="container">
+      <h1>Hotel Paradise</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li id="auth-nav" style="display: none;">
+            <span>Welcome, <span id="username-display"></span> | <a href="#" onclick="logout()">Logout</a></span>
+          </li>
+          <li id="login-link"><a href="login.html">Login</a></li>
+          <li id="register-link"><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Hero -->
+  <section id="home" class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')">
+    <div class="container">
+      <h2>Luxury Redefined</h2>
+      <p>Experience paradise with world-class amenities and personalized service</p>
+      <a href="#rooms-preview" class="btn" onclick="smoothScroll('#rooms-preview')">Explore Rooms</a>
+    </div>
+  </section>
+
+  <!-- Quick About -->
+  <section class="page-section">
+    <div class="container">
+      <h2>Why Choose Hotel Paradise?</h2>
+      <div class="facilities-grid">
+        <div class="facility">
+          <i class="fas fa-swimming-pool"></i>
+          <h3>Infinity Pool</h3>
+          <p>Stunning views with our rooftop infinity pool</p>
+        </div>
+        <div class="facility">
+          <i class="fas fa-spa"></i>
+          <h3>Luxury Spa</h3>
+          <p>Relax with our world-class spa treatments</p>
+        </div>
+        <div class="facility">
+          <i class="fas fa-utensils"></i>
+          <h3>Gourmet Dining</h3>
+          <p>5-star cuisine from award-winning chefs</p>
+        </div>
+        <div class="facility">
+          <i class="fas fa-wifi"></i>
+          <h3>High-Speed WiFi</h3>
+          <p>Complimentary throughout the property</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms Preview -->
+  <section id="rooms-preview" class="page-section">
+    <div class="container">
+      <h2>Our Signature Rooms</h2>
+      <div class="room-gallery">
+        <div class="room-item" onclick="bookRoom('Deluxe Room')">
+          <img src="https://images.unsplash.com/photo-1578683015141-0acef764fe76?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Deluxe Room">
+          <div class="room-item-content">
+            <h3>Deluxe Room</h3>
+            <p>King bed, city views, marble bathroom</p>
+            <div class="price">₹12,000<span>/night</span></div>
+          </div>
+        </div>
+        <div class="room-item" onclick="bookRoom('Suite')">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Suite">
+          <div class="room-item-content">
+            <h3>Presidential Suite</h3>
+            <p>Living room, jacuzzi, private balcony</p>
+            <div class="price">₹28,000<span>/night</span></div>
+          </div>
+        </div>
+        <div class="room-item" onclick="bookRoom('Family Suite')">
+          <img src="https://images.unsplash.com/photo-1571896349842-1e8982600a58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Family Suite">
+          <div class="room-item-content">
+            <h3>Family Suite</h3>
+            <p>2 bedrooms, kids play area, connecting rooms</p>
+            <div class="price">₹18,000<span>/night</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="rooms.html" class="btn">View All Rooms</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials page-section">
+    <div class="container">
+      <h2>What Our Guests Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&w=100&h=100&fit=crop&crop=face" alt="Sarah">
+          <p>"Absolutely stunning! The service was impeccable and the rooms breathtaking. Best hotel experience ever!"</p>
+          <h4>- Sarah Johnson</h4>
+        </div>
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&w=100&h=100&fit=crop&crop=face" alt="Michael">
+          <p>"Perfect for our anniversary. The spa treatments and gourmet dining made it unforgettable."</p>
+          <h4>- Michael Chen</h4>
+        </div>
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&w=100&h=100&fit=crop&crop=face" alt="Emma">
+          <p>"Family paradise! Kids loved the pool and activities. We'll be back next summer."</p>
+          <h4>- Emma Wilson</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="page-section" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; text-align: center;">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem;">Ready to Book?</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Experience luxury like never before. Limited availability - book now!</p>
+      <button class="btn" onclick="openModal('bookingModal')" style="font-size: 1.3rem; padding: 1.2rem 3rem;">Book Now</button>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="booking-modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('bookingModal')">&times;</span>
+      <h2>Quick Booking</h2>
+      <form id="bookingForm" class="professional-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone" required>
+        <input type="date" id="checkin" required>
+        <input type="date" id="checkout" required>
+        <input type="hidden" id="roomTypeModal">
+        <button type="submit" class="btn">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Hotel Paradise</h4>
+        <p>Luxury accommodations with world-class service</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="rooms.html">Rooms</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <a href="mailto:info@hotelparadise.com">info@hotelparadise.com</a>
+        <a href="tel:+1234567890">+1 (234) 567-890</a>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Hotel Paradise. All rights reserved. | Designed for professional testing</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
