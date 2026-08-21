@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - Hotel Paradise</title>
   <link rel="stylesheet" href="style.css">
-</head>
+</head> 
+  
 <body>
   <header>
     <div class="container">
       <h1>Hotel Paradise</h1>
       <nav>
         <ul>
+          
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="rooms.html">Rooms</a></li>
@@ -22,6 +24,7 @@
           <li id="login-link"><a href="login.html">Login</a></li>
           <li id="register-link"><a href="register.html">Register</a></li>
         </ul>
+        
       </nav>
     </div>
   </header>
@@ -63,11 +66,9 @@
       </div>
     </div>
   </section>
-
   <footer style="position: relative;">
     <p>&copy; 2025 Hotel Paradise. All rights reserved.</p>
   </footer>
-
   <script src="script.js"></script>
   <script>
     updateNav();
@@ -78,7 +79,7 @@
     addRealTimeValidation('regFullName', validateFullName, 'regFullName');
     addRealTimeValidation('regPhone', validatePhone, 'regPhone');
     addRealTimeValidation('regPassword', validatePassword, 'regPassword');
-    
+  
     document.getElementById('regConfirmPassword').addEventListener('input', function() {
       const password = document.getElementById('regPassword').value;
       const confirm = this.value;
