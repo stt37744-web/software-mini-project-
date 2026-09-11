@@ -6,8 +6,7 @@
   <title>Login - Hotel Paradise</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  
+<body>  
   <header>
     <div class="container">
       <h1>Hotel Paradise</h1>
@@ -20,7 +19,6 @@
           <li id="auth-nav" style="display: none;">
             <span>Welcome, <span id="username-display"></span> | <a href="#" onclick="logout()">Logout</a></span>
           </li>
-          
           <li id="login-link"><a href="login.html">Login</a></li>
           <li id="register-link"><a href="register.html">Register</a></li>
         </ul>
@@ -52,8 +50,7 @@
   <script src="script.js"></script>
   <script>
     // Temp for login page load
-    updateNav();
-    
+    updateNav(); 
     // Real-time validation for login
     document.getElementById('loginPassword').addEventListener('input', function() {
       if (this.value) {
