@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - Hotel Paradise</title>
   <link rel="stylesheet" href="style.css">
-</head> 
-  
+</head>   
 <body>
   <header>
     <div class="container">
       <h1>Hotel Paradise</h1>
       <nav>
-        <ul>
-          
+        <ul>  
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="rooms.html">Rooms</a></li>
@@ -23,12 +21,10 @@
           </li>
           <li id="login-link"><a href="login.html">Login</a></li>
           <li id="register-link"><a href="register.html">Register</a></li>
-        </ul>
-        
+        </ul>    
       </nav>
     </div>
   </header>
-
   <section class="page-section" style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center; padding: 20px;">
     <div class="container">
       <div style="max-width: 400px; width: 100%; margin: 0 auto;">
@@ -37,27 +33,21 @@
           <label for="regUsername">Username</label>
           <input type="text" id="regUsername" required>
           <span class="error"></span>
-
           <label for="regEmail">Email</label>
           <input type="email" id="regEmail" required>
           <span class="error"></span>
-
           <label for="regFullName">Full Name</label>
           <input type="text" id="regFullName" required>
           <span class="error"></span>
-
           <label for="regPhone">Phone Number</label>
           <input type="tel" id="regPhone" required>
           <span class="error"></span>
-
           <label for="regPassword">Password</label>
           <input type="password" id="regPassword" required>
           <span class="error"></span>
-
           <label for="regConfirmPassword">Confirm Password</label>
           <input type="password" id="regConfirmPassword" required>
           <span class="error"></span>
-
           <button type="submit" class="btn">Register</button>
           <p style="text-align: center; margin-top: 20px;">
             Already have an account? <a href="login.html">Login here</a>
@@ -72,7 +62,6 @@
   <script src="script.js"></script>
   <script>
     updateNav();
-    
     // Real-time validation
     addRealTimeValidation('regUsername', validateUsername, 'regUsername');
     addRealTimeValidation('regEmail', validateEmail, 'regEmail');
@@ -89,7 +78,6 @@
         clearFieldError('regConfirmPassword');
       }
     });
-    
     document.getElementById('registerForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const username = document.getElementById('regUsername').value;
@@ -98,20 +86,17 @@
       const email = document.getElementById('regEmail').value;
       const password = document.getElementById('regPassword').value;
       const confirmPassword = document.getElementById('regConfirmPassword').value;
-      
       const result = validateRegister(username, fullName, phone, email, password, confirmPassword);
       if (!result.valid) {
         Object.entries(result.errors).forEach(([field, msg]) => {
           showFieldError(field, msg);
         });
         return;
-      }
-      
+      } 
       // Register user
       const users = getUsers();
       users.push({username, fullName, phone, email, password}); // Demo: store plain pw (real: hash)
       saveUsers(users);
-      
       alert('Registration successful! Please login.');
       window.location.href = 'login.html';
     });
